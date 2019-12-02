@@ -1,0 +1,151 @@
+<html>
+	<head>
+		<title> | SORTEANDO LOTOFÁCIL | </title>
+		<center><img src = "headlotofacil.jpg" >
+		<br><br>
+		</center>
+				<script>
+					function sortear(j, n){
+						var num = 0, jogos, nums;
+						var coluna, linha, i, aux, sorteio = new Array(nums);
+											
+						jogos = parseInt(j);
+						nums = parseInt(n);
+						
+						if(nums < 15 || nums > 18){
+						alert("Inserir número entre 15 e 18")
+						}
+						else{
+						
+						for (z = 0; z<jogos; z++){
+							document.write("<h2>");
+							document.write("<center>");
+							document.write(" JOGO "+ " " + (z+1) + "<br>");
+							document.write("<br>");
+							document.write("</center>");
+							document.write("</h2>");
+						
+							for (i = 0; i < nums; i++){
+								num = Math.floor(Math.random()*25)+1 ;
+								aux = 0;
+								
+								while(sorteio[aux] != num && aux < nums){
+									aux = aux + 1;
+								}
+								
+								if (aux < nums){
+									i = i - 1;
+								}
+								else{
+									sorteio[i] = num;
+								}
+							}
+							document.write("<h2>");
+							document.write("<center>");
+							document.write("Números Sorteados:     " + "<br>");
+							
+							for (i = 0; i < nums; i++){ 
+								document.write(sorteio[i] + "   ,  ");
+							}
+							document.write("<br>");
+							document.write("<br>");
+							document.write("<br>");
+							document.write("<table border = 5 cellspacing = 20>" );
+							
+							var inserenumeronatabela = 1;
+								for (linha = 1; linha <= 5; linha++){
+									document.write("<tr>");
+									for(coluna = 1; coluna <= 5; coluna++){
+
+										if(sorteio[0] == inserenumeronatabela || sorteio[1] == inserenumeronatabela || sorteio[2] == inserenumeronatabela ||
+										   sorteio[3] == inserenumeronatabela || sorteio[4] == inserenumeronatabela || sorteio[5] == inserenumeronatabela ||
+										   sorteio[6] == inserenumeronatabela || sorteio[7] == inserenumeronatabela || sorteio[8] == inserenumeronatabela ||
+										   sorteio[9] == inserenumeronatabela || sorteio[10] == inserenumeronatabela || sorteio[11] == inserenumeronatabela ||
+										   sorteio[12] == inserenumeronatabela || sorteio[13] == inserenumeronatabela || sorteio[14] == inserenumeronatabela ||
+										   sorteio[15] == inserenumeronatabela || sorteio[16] == inserenumeronatabela || sorteio[17] == inserenumeronatabela ||
+										   sorteio[18] == inserenumeronatabela || sorteio[19] == inserenumeronatabela || sorteio[20] == inserenumeronatabela ||
+										   sorteio[21] == inserenumeronatabela || sorteio[22] == inserenumeronatabela || sorteio[23] == inserenumeronatabela ||
+										   sorteio[24] == inserenumeronatabela || sorteio[25] == inserenumeronatabela || sorteio[26] == inserenumeronatabela ||
+										   sorteio[27] == inserenumeronatabela || sorteio[28] == inserenumeronatabela || sorteio[29] == inserenumeronatabela ||
+										   sorteio[30] == inserenumeronatabela || sorteio[31] == inserenumeronatabela || sorteio[32] == inserenumeronatabela ||
+										   sorteio[33] == inserenumeronatabela || sorteio[34] == inserenumeronatabela || sorteio[35] == inserenumeronatabela ||
+										   sorteio[36] == inserenumeronatabela || sorteio[37] == inserenumeronatabela || sorteio[38] == inserenumeronatabela ||
+										   sorteio[39] == inserenumeronatabela || sorteio[40] == inserenumeronatabela || sorteio[41] == inserenumeronatabela ||
+										   sorteio[42] == inserenumeronatabela || sorteio[43] == inserenumeronatabela || sorteio[44] == inserenumeronatabela ||
+										   sorteio[45] == inserenumeronatabela || sorteio[46] == inserenumeronatabela || sorteio[47] == inserenumeronatabela ||
+										   sorteio[48] == inserenumeronatabela || sorteio[49] == inserenumeronatabela || sorteio[50] == inserenumeronatabela) {
+											
+											document.write("<td bgcolor = purple>" + inserenumeronatabela);
+										}
+										else{
+											document.write("<td>" + inserenumeronatabela);
+										}
+										inserenumeronatabela++;
+								
+									}
+								document.write("</tr>");
+								}
+							document.write("</table>");
+							document.write("<br>");
+							document.write("<hr>");
+							document.write("<hr>");
+							document.write("<hr>");
+							
+							document.write("<br>");
+							document.write("</h2>");
+							document.write("</center>");
+						}
+					}
+					}
+				</script>
+		</head>
+	
+	<body background="fundolilas.jpg" bgproperties="fixed">
+	<hr>
+	<center>
+	<fieldset>
+	<legend>
+		<h1> Para o Sorteio Aleatório insira as informações abaixo:</h1> 
+	</legend>
+		<form>
+		<h3><label for = "id_jogos"> Quantidade de Jogos:
+			<input type = "text"
+				name = "txtjogos"
+				size = "5"
+				id = "id_jogos"
+				placeholder = " ">
+		</label>
+<br><br>
+		<label for = "id_nums"> Números por Jogos:
+			<input type = "text"
+				name = "txtnums"
+				size = "5"
+				id = "id_nums"
+				placeholder = " ">
+		</label>
+		<br><br>
+		</center>
+		<center>
+		<input type = "button" id = "btEnvio" value = "SORTEAR" onclick = "sortear(txtjogos.value, txtnums.value)">
+		<input type = "reset" value = "LIMPAR" /><p/>
+
+		</fieldset>
+		</h3>
+		<br></center>
+		</form>
+		<center>
+		<h1> 
+
+		</h1>
+		</center>
+		<br><br>
+		<center>
+			<a href="capasorteio.html" >|<img src = "capa.jpg">|</a>	
+			<a href="megasena.html" >|<img src = "megasena.png">|</a>
+			<a href="quina.html" >|<img src = "quina.jpg">|</a>
+			<a href="lotofacil.html" >|<img src = "lotofacil.png">|</a>
+			<a href="lotomania.html" >|<img src = "lotomania.png">|</a>
+			<a href=http://www.caixa.com.br target = _blank>|<img src = "caixa.png">|</a>
+		</center>
+	</body>
+</html>
